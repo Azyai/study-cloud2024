@@ -1,0 +1,19 @@
+# 那些数据应该放在这里呢？凡是跟微服务consul有关的
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+      config:
+        profile-separator: '-' # 官网默认是， 我们重新设置成-
+        format: yaml
+        watch:
+          wait-time: 1
+  application:
+    name: cloud-payment-service
+
+# config/cloud-payment-service/data
+#       /cloud-payment-service-dev/data
+#       /cloud-payment-service-prod/data
